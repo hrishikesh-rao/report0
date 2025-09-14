@@ -394,4 +394,6 @@ Heres the link to my mini report:
 https://github.com/hrishikesh-rao/garbage/blob/main/scratch.ipynb
 ---
 
-TASK 21: Task 21: Watch & Reflect – Intro to Machine Learning.
+# TASK 21: Task 21: Watch & Reflect – Intro to Machine Learning.
+
+[Here's the link to my resource article](https://github.com/hrishikesh-rao/report0/blob/main/vid.md)
