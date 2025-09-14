@@ -49,8 +49,7 @@ Also few commands specific to github like commit, push, fork, pull requests.
 - Corrected the error and committed it.
 - Later did a pull request.
 
-![](https://github.com/hrishikesh-rao/garbage/blob/main/Screenshot%20(121).png?
-raw=true)
+![](https://github.com/hrishikesh-rao/garbage/blob/main/Screenshot%20(121).png?raw=true)
 ---
 # TASK 4: Command Line Interface on Ubuntu 
 
@@ -391,7 +390,7 @@ To familiarise the ui of the jupyter notebook and to do the give task
 Doing this task was kinda fun.
 
 Heres the link to my mini report:
-https://github.com/hrishikesh-rao/garbage/blob/main/scratch.ipynb
+[Click here](https://github.com/hrishikesh-rao/garbage/blob/main/scratch.ipynb)
 ---
 
 # TASK 21: Task 21: Watch & Reflect – Intro to Machine Learning.
