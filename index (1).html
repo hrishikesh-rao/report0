@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minimal Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff); /* page background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+      padding: 20px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      padding: 8px;
+      width: 70%;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      outline: none;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      background: #4f46e5;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #4338ca;
+    }
+    p {
+      margin: 6px 0;
+      font-size: 16px;
+      color: #333;
+      font-weight: 500;
+    }
+    h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Weather Info</h2>
+    <input type="text" id="city" placeholder="Enter city">
+    <br>
+    <button onclick="getWeather()">Get Weather</button>
+
+    <p id="temp"></p>
+    <p id="humidity"></p>
+    <p id="precip"></p>
+  </div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById("city").value;
+      const apiKey = "18586a8190c7526bd15e0921074ccfc4"; // replace with your OpenWeatherMap API key
+      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.cod !== "200") {
+          alert("City not found!");
+          return;
+        }
+
+        const weather = data.list[0]; // first forecast entry
+        const temp = weather.main.temp;
+        const humidity = weather.main.humidity;
+        const precipitation = weather.pop * 100;
+
+        document.getElementById("temp").innerText = "🌡️ Temperature: " + temp + " °C";
+        document.getElementById("humidity").innerText = "💧 Humidity: " + humidity + " %";
+        document.getElementById("precip").innerText = "☔ Chance of Rain: " + precipitation + " %";
+      } catch (err) {
+        alert("Error fetching weather data");
+      }
+    }
+  </script>
+</body>
+</html>
